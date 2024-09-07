@@ -19,6 +19,13 @@ if (process.env.NODE_ENV !== "PRODUCTION") {
 // database
 connectDatabse();
 
+const cors = require("cors");
+app.use(cors({
+  origin: "https://frontend-full-stack-ecommerce-project-78ul.vercel.app", // Fixed 'origin' typo
+  methods: ["POST", "GET", "PUT", "DELETE"],
+  credentials: true
+}));
+
 
 
 
