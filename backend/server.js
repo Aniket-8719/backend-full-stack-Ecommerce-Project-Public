@@ -21,7 +21,7 @@ connectDatabse();
 
 const cors = require("cors");
 app.use(cors({
-  origin: "https://frontend-full-stack-ecommerce-project-78ul.vercel.app", // Fixed 'origin' typo
+  origin: "http://localhost:3000", // Fixed 'origin' typo
   methods: ["POST", "GET", "PUT", "DELETE"],
   credentials: true
 }));
