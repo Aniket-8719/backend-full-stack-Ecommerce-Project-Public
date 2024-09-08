@@ -22,7 +22,7 @@ connectDatabse();
 
 const cors = require("cors");
 app.use(cors({
-  origin: "http://localhost:3000", // Fixed 'origin' typo
+  origin:  process.env.FRONTEND_URL, // Fixed 'origin' typo
   methods: ["POST", "GET", "PUT", "DELETE"],
   credentials: true
 }));
