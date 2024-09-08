@@ -19,6 +19,7 @@ if (process.env.NODE_ENV !== "PRODUCTION") {
 // database
 connectDatabse();
 
+<<<<<<< HEAD
 const cors = require("cors");
 app.use(cors({
   origin: "http://localhost:3000", // Fixed 'origin' typo
@@ -26,6 +27,8 @@ app.use(cors({
   credentials: true
 }));
 
+=======
+>>>>>>> ca16c58 (Add .gitignore to exclude node_modules and frontend directory)
 
 
 
@@ -48,4 +51,8 @@ process.on("unhandledRejection", (err)=>{
     server.close(()=>{
         process.exit(1);
     })
+<<<<<<< HEAD
 })
+=======
+})
+>>>>>>> ca16c58 (Add .gitignore to exclude node_modules and frontend directory)

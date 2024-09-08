@@ -28,7 +28,11 @@ exports.registerUser = catchAsyncError(async(req, res, next) => {
 
     sendToken(user,201,res);
 });
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> ca16c58 (Add .gitignore to exclude node_modules and frontend directory)
 //  Login User
 exports.loginUser = catchAsyncError(async(req, res, next)=>{
     const {email, password} = req.body;
