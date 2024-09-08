@@ -16,7 +16,7 @@ if (process.env.NODE_ENV !== "PRODUCTION") {
 
 // CORS Configuration
 app.use(cors({
-  origin: process.env.FRONTEND_URL, // The frontend domain
+  origin:  process.env.FRONTEND_URL, // The frontend domain
   credentials: true, // Allow cookies and credentials
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization", "x-api-key"], // Specify allowed headers
