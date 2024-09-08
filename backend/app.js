@@ -3,18 +3,27 @@ const errorMiddleware = require("./middleware/error");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const fileUpload = require("express-fileupload");
-const app = express();
-const dotenv = require("dotenv");
-const path = require("path");
+const cors = require("cors");
 const helmet = require("helmet");
+const path = require("path");
 
+const app = express();
 
-// // Config
+// Config
 if (process.env.NODE_ENV !== "PRODUCTION") {
   require("dotenv").config({ path: "backend/config/config.env" });
 }
 
-app.use(express.json({ limit: '50mb' })); 
+// CORS Configuration
+app.use(cors({
+  origin: process.env.FRONTEND_URL, // The frontend domain
+  credentials: true, // Allow cookies and credentials
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization", "x-api-key"], // Specify allowed headers
+}));
+
+// Middleware
+app.use(express.json({ limit: '50mb' }));
 app.use(cookieParser());
 app.use(helmet());
 
@@ -30,21 +39,17 @@ app.use(fileUpload({
 
 // Routes import
 const apiKeyMiddleware = require('./middleware/apiKeyMiddleware');
-const product = require("./routes/productRoute"); 
+const product = require("./routes/productRoute");
 const user = require("./routes/userRoute");
 const order = require("./routes/orderRoute");
 const payment = require("./routes/paymentRoute");
 
-app.use(`/api/v1`,apiKeyMiddleware, product);
-app.use("/api/v1",apiKeyMiddleware, user);
-app.use("/api/v1",apiKeyMiddleware, order);
-app.use("/api/v1",apiKeyMiddleware, payment); 
+app.use(`/api/v1`, apiKeyMiddleware, product);
+app.use("/api/v1", apiKeyMiddleware, user);
+app.use("/api/v1", apiKeyMiddleware, order);
+app.use("/api/v1", apiKeyMiddleware, payment);
 
-
-
-
-//  use Middleware
+// Error middleware
 app.use(errorMiddleware);
- 
 
 module.exports = app;
