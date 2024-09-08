@@ -10,7 +10,7 @@ const sendToken = (user, statusCode, res)=>{
             Date.now() + process.env.COOKIE_EXPIRE * 24 * 60 * 60 * 1000
         ),
         secure: true,
-        httpOnly:false,
+        httpOnly:true,
         sameSite: 'Lax',  // Required for cross-origin cookies
     };
 
