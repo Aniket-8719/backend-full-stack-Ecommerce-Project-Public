@@ -11,7 +11,7 @@ const sendToken = (user, statusCode, res)=>{
         ),
         secure: true,
         httpOnly:true,
-        sameSite: 'Lax',  // Required for cross-origin cookies
+        sameSite: 'None', // 'None' required for cross-origin requests with cookies in production
     };
 
 
