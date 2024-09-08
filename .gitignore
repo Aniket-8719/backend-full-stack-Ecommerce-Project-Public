@@ -1,15 +1,9 @@
-# Node modules directories
+# Ignore node_modules folder
 node_modules/
 frontend/node_modules/
 
-# Exclude frontend directory
-frontend/
+# Ignore environment variables
+.env
 
-# Other files to ignore
-package-lock.json
+# Ignore any logs
 *.log
-*.env
-.DS_Store
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*

@@ -13,11 +13,7 @@ const app = express();
 if (process.env.NODE_ENV !== "PRODUCTION") {
   require("dotenv").config({ path: "backend/config/config.env" });
 }
-<<<<<<< HEAD
 
-=======
- 
->>>>>>> ca16c58 (Add .gitignore to exclude node_modules and frontend directory)
 // CORS Configuration
 app.use(cors({
   origin: process.env.FRONTEND_URL, // The frontend domain
@@ -42,11 +38,9 @@ app.use(fileUpload({
 }));
 
 // Routes import
-<<<<<<< HEAD
 const apiKeyMiddleware = require('./middleware/apiKeyMiddleware');
-=======
-const apiKeyMiddleware = require('./middleware/apiKeyMiddleware'); 
->>>>>>> ca16c58 (Add .gitignore to exclude node_modules and frontend directory)
+
+
 const product = require("./routes/productRoute");
 const user = require("./routes/userRoute");
 const order = require("./routes/orderRoute");

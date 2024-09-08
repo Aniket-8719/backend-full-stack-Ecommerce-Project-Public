@@ -52,12 +52,10 @@ exports.getAllProducts = catchAsyncError(async (req, res) => {
     products,
     productsCount,
     resultPerPage,
-<<<<<<< HEAD
+
   });
-=======
-  });z
->>>>>>> ca16c58 (Add .gitignore to exclude node_modules and frontend directory)
-});
+
+  });
 
 // Get Product Details
 exports.getProductDetails = catchAsyncError(async (req, res, next) => {
