@@ -20,15 +20,6 @@ if (process.env.NODE_ENV !== "PRODUCTION") {
 connectDatabse();
 
 
-const cors = require("cors");
-app.use(cors({
-  origin:  process.env.FRONTEND_URL, // Fixed 'origin' typo
-  methods: ["POST", "GET", "PUT", "DELETE"],
-  credentials: true
-}));
-
-
-
 
 cloudinary.config({
     cloud_name: process.env.CLOUDINARY_NAME,
